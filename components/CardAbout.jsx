@@ -4,17 +4,7 @@ import { Grid } from '@mui/material';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 
-
-
-type Props = {
-  title?: string,
-  description?: string,
-  img?: string,
-  alt?: string,
-}
-
-const CardAbout = ({title='', description='', img='', alt=''}: Props) => (
-
+const CardAbout = ({title, description, img, alt}) => (
   <Grid item xs={4} sm={6} lg={3}>
     <Card
       sx={{
@@ -25,18 +15,20 @@ const CardAbout = ({title='', description='', img='', alt=''}: Props) => (
         padding: '30px 30px',
         textAlign: 'center',
         background: '#FFFFFF',
-      }}>
+      }}
+    >
       <CardActionArea
         sx={{
           '& .MuiCardMedia-root': { width: "117px" },
-        }}>
+        }}
+      >
         <CardMedia
           component="img"
           width="117"
           image={img}
           alt={alt}
           sx={{
-            margin: 'auto'
+            margin: 'auto',
           }}
         />
         <CardContent>
@@ -49,9 +41,11 @@ const CardAbout = ({title='', description='', img='', alt=''}: Props) => (
               fontSize: { xs: "16px", md: "20px" },
               lineHeight: { xs: "18px", md: "24px" },
               padding: "15px 0"
-            }}>
+            }}
+          >
             {title}
           </Typography>
+
           <Typography
             component="p"
             align="center"
@@ -67,7 +61,6 @@ const CardAbout = ({title='', description='', img='', alt=''}: Props) => (
       </CardActionArea>
     </Card>
   </Grid>
-
 )
 
 export default CardAbout
